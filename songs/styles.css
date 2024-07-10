@@ -1,0 +1,88 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: none; /* Hide the default cursor */
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+input[type="text"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    width: 60%;
+    max-width: 400px;
+    font-size: 1em;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: #ff7e5f;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-left: 10px;
+}
+
+button:hover {
+    background: #feb47b;
+}
+
+#player {
+    margin-top: 20px;
+    width: 80%;
+    max-width: 640px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Custom cursor */
+body::before {
+    content: '';
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    background-image: url('cat.png');
+    background-size: cover;
+    pointer-events: none;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    animation: chase 0.3s infinite;
+}
+
+@keyframes chase {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.1); }
+}
